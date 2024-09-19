@@ -9,6 +9,6 @@ using System.Threading.Tasks;
 namespace Repository.Repositories
 {
     public class CategoryRepository : BaseRepository<Category>,ICategoryRepository
-    {
+    {   
     }
 }

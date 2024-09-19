@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini Layihe", "Mini Layihe\Mini Layihe.csproj", "{541B9767-9BB5-48B2-BE71-93B5008029E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini Layihe", "Mini Layihe\Mini Layihe.csproj", "{541B9767-9BB5-48B2-BE71-93B5008029E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{6D15E625-26CF-45F8-9651-50400D938418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6D15E625-26CF-45F8-9651-50400D938418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{180F2150-2EDF-4B52-89C0-606DBC136470}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{180F2150-2EDF-4B52-89C0-606DBC136470}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

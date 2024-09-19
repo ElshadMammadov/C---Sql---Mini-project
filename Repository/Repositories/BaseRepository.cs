@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Repository.Repositories.Data;
 using Repository.Repositories.Interfaces;
+using System.Linq.Expressions;
 
 namespace Repository.Repositories
 {
@@ -35,9 +36,9 @@ namespace Repository.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllDatasWithExpressionAsync(Expression<Func<T, bool>> expression)
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet.Where(expression).ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
