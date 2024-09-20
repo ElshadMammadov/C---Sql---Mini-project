@@ -8,7 +8,16 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class CategoryRepository : BaseRepository<Category>,ICategoryRepository
-    {   
+    public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
+    {
+        public async Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task UpdateAsync(Category category)
+        {
+            Console.WriteLine("isledi");
+        }
     }
 }

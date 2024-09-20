@@ -15,25 +15,25 @@ namespace Repository.Repositories
 
         public BaseRepository()
         {
-                _context = new AppDbContext();
+            _context = new AppDbContext();
             _dbSet = _context.Set<T>();
         }
         public async Task CreateAsync(T entity)
         {
-            await _dbSet.AddAsync(entity);  
-            await _context.SaveChangesAsync();  
+            _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(T entity)
         {
+
             _dbSet.Remove(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task EditAsync(T entity)
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            _dbSet.Update(entity);
-            await _context.SaveChangesAsync();
+            return await _dbSet.ToListAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllDatasWithExpressionAsync(Expression<Func<T, bool>> expression)
@@ -45,5 +45,12 @@ namespace Repository.Repositories
         {
             return await _dbSet.FindAsync(id);
         }
+
+        public async Task UpdateAsync(T entity)
+        {
+            _dbSet.Update(entity);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }
