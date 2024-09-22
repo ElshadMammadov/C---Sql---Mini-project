@@ -30,30 +30,13 @@ namespace Mini_Layihe
 
             while (true)
             {
-                ConsoleColor.Red.WriteConsole("Choose an option:");
-                ConsoleColor.Green.WriteConsole("1. Create Category");
-                ConsoleColor.Green.WriteConsole("2. Get Categories");
-                ConsoleColor.Green.WriteConsole("3. Get Category By ID");       
-                ConsoleColor.Green.WriteConsole("4. Update Category");
-                ConsoleColor.Green.WriteConsole("5. Delete Category");
-                ConsoleColor.Green.WriteConsole("6. Search Categories");
-                ConsoleColor.Green.WriteConsole("7. Get Categories with Products");
-                ConsoleColor.Green.WriteConsole("8. Sort Categories by Created Date");
-                ConsoleColor.Green.WriteConsole("9. Get Archive Categories");   
-                Console.WriteLine("");
-                ConsoleColor.Red.WriteConsole("Choose an option:");
-                ConsoleColor.Cyan.WriteConsole("10. Create Product");
-                ConsoleColor.Cyan.WriteConsole("11. Get Products");
-                ConsoleColor.Cyan.WriteConsole("12. Update Product");
-                ConsoleColor.Cyan.WriteConsole("13. Delete Product");
-                ConsoleColor.Cyan.WriteConsole("14. Search Products by Name");
-                ConsoleColor.Cyan.WriteConsole("15. Filter Products by Category Name");
-                ConsoleColor.Cyan.WriteConsole("16. Sort Products by Price");
-                ConsoleColor.Cyan.WriteConsole("17. Sort Products by Created Date");
-                ConsoleColor.Cyan.WriteConsole("18. Search Products by Color");
-                ConsoleColor.Cyan.WriteConsole("19. Delete Product By ID"); 
-                ConsoleColor.Cyan.WriteConsole("20. Update Product By ID"); 
-                ConsoleColor.Red.WriteConsole("21. Exit");
+                ConsoleColor.Blue.WriteConsole("Please select one option");
+                ConsoleColor.Red.WriteConsole("Category");
+                ConsoleColor.Green.WriteConsole("\n  1.Create Category,\n  2. Get Categories \n  3. Get Category By ID, \n  4 Update Category, \n  5. Delete Category, \n  6. Search Categories, \n  7. Get Categories with Products, \n  8. Sort Categories by Created Date, \n  9. Get Archive Categories");
+                Console.WriteLine();
+                ConsoleColor.Blue.WriteConsole("Please select one option");
+                ConsoleColor.Red.WriteConsole("Product");
+                ConsoleColor.Green.WriteConsole(" \n  10. Create Product,\n  11. Get Products,\n  12. Update Product,\n  13. Delete Product,\n  14. Search Products by Name,\n  15. Filter Products by Category Name,\n  16. Sort Products by Price,\n  17. Sort Products by Created Date,\n  18. Search Products by Color,\n  19. Delete Product By ID,\n  20. Update Product By ID,\n  21. Exit");
 
                 string choice = Console.ReadLine();
 

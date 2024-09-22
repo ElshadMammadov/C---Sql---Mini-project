@@ -139,6 +139,7 @@ namespace Mini_Layihe.Controllers
             }
         }
 
+
         public async Task UpdateProduct(int id)
         {
             Console.WriteLine("Enter New Product Name:");
@@ -171,7 +172,6 @@ namespace Mini_Layihe.Controllers
                 Console.WriteLine($"Error updating product: {ex.Message}");
             }
         }
-
         public async Task DeleteProduct(int id)
         {
             try
@@ -212,9 +212,5 @@ namespace Mini_Layihe.Controllers
             };
         }
 
-        internal Task<IEnumerable<object>> GetProducts()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
