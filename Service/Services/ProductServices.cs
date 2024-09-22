@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Repository.Repositories.Interfaces;
+using Service.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    internal class ProductServices
+    public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepo;
 
-        public ProductServices(IProductRepository productRepo)
+        public ProductService(IProductRepository productRepo)
         {
             _productRepo = productRepo;
         }
@@ -26,6 +27,7 @@ namespace Service.Services
         {
             await _productRepo.DeleteAsync(id);
         }
+
 
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
@@ -70,6 +72,16 @@ namespace Service.Services
         public async Task<IEnumerable<Product>> SearchByColorAsync(string color)
         {
             return await _productRepo.SearchByColorAsync(color);
+        }
+
+        public Task EditAsync(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<List<Product>> IProductService.GetAllAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

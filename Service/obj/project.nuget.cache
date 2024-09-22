@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TxPJP4Nzck3JQdS3meoxnzSAbTwIVD/UJNqn0LWDCZ7yCAw8XiBvn+uJlEhOfNifW+V9cJ0ljhRqynLO8WAJqw==",
+  "dgSpecHash": "/XyRlzaB7wjpmei8cpb1ChT17FIPaHK/CtzSRg1l0YFdkeW/Xy8fY3jmuyv1R1PqYjhMdnxurQTU4Ryi7MlbOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Service\\Service.csproj",
+  "projectFilePath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elshad\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\elshad\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

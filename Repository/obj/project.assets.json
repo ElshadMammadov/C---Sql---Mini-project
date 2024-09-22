@@ -2035,11 +2035,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Repository\\Repository.csproj",
+      "projectPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\elshad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Repository\\obj\\",
+      "outputPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elshad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2056,8 +2056,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Domain\\Domain.csproj"
+            "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Domain\\Domain.csproj"
             }
           }
         }

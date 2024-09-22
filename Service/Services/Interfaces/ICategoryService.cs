@@ -21,5 +21,6 @@ namespace Service.Services.Interfaces
         Task<IEnumerable<Category>> SortWithCreatedDate();
         Task<IEnumerable<Category>> GetArchiveCategories();
         Task UpdateAsync(Category category);
+        Task<IEnumerable<Category>> SearchAsync(string searchText);
     }
 }

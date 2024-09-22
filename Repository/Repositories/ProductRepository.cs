@@ -1,4 +1,6 @@
 ﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Repository.Repositories.Data;
 using Repository.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,13 @@ namespace Repository.Repositories
 {
     public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
-        public Task DeleteAsync(int id)
+        private readonly AppDbContext _context;
+
+        public ProductRepository()
+        {
+            _context = new AppDbContext();
+        }
+        public async Task DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,9 +38,11 @@ namespace Repository.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Product>> SearchByNameAsync(string name)
+        public async Task<IEnumerable<Product>> SearchByNameAsync(string name)
         {
-            throw new NotImplementedException();
+            return await _context.Products.Where(m => m.Name.Trim().ToUpper().Contains(name.Trim().ToUpper())).
+                                           ToListAsync();
+
         }
 
         public Task<IEnumerable<Product>> SortByCreatedDateAsync(bool ascending)

@@ -9,7 +9,9 @@ namespace Repository.Repositories.Interfaces
 {
     public interface ICategoryRepository : IBaseRepository<Category>
     {
-    
+        Task<IEnumerable<Category>> SearchAsync(string searchText);
+        Task<IEnumerable<Category>> GetAllWithProducts();
+        Task<IEnumerable<Category>> SortWithCreatedDateAsync();
     }
 
 }

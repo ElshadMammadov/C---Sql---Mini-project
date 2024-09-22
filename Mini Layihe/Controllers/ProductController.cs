@@ -11,41 +11,131 @@ namespace Mini_Layihe.Controllers
     internal class ProductController
     {
         private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
+        private IProductService productService;
+
+        public ProductController(IProductService productService,
+                                 ICategoryService categoryService)
+        {
+            _productService = productService;
+            _categoryService = categoryService;
+        }
 
         public ProductController(IProductService productService)
         {
-            _productService = productService;
+            this.productService = productService;
         }
-
-
 
         public async Task CreateProduct()
         {
-            Console.WriteLine("Enter Product Name:");
-            string name = Console.ReadLine();
+            Console.WriteLine("Please enter Product Name:");
+        ProductName: string name = Console.ReadLine();
 
-            Console.WriteLine("Enter Product Price:");
-            decimal price;
-            while (!decimal.TryParse(Console.ReadLine(), out price))
+            if (string.IsNullOrWhiteSpace(name))
             {
-                Console.WriteLine("Please enter a valid price.");
+                Console.WriteLine("Product name is not empty !");
+                goto ProductName;
             }
 
-            await _productService.CreateAsync(new Product { Name = name, Price = price, CreatedDate = DateTime.Now });
+            Console.WriteLine("Please enter product count:");
+        ProductCount: string ProductCount = Console.ReadLine();
+            bool isProductCountCorrect = int.TryParse(ProductCount, out var count);
+            if (!isProductCountCorrect)
+            {
+                Console.WriteLine("Please add Product count correct format");
+                goto ProductCount;
+            }
+
+            Console.WriteLine("Enter Product Price:");
+        ProductPrice: string ProductPrice = Console.ReadLine();
+            bool isProductPriceCorrect = decimal.TryParse(ProductPrice, out var price);
+            if (!isProductPriceCorrect)
+            {
+                Console.WriteLine("Please add Product price correct format");
+                goto ProductPrice;
+            }
+
+            Console.WriteLine("Please add Product Description");
+        ProductDesc: string ProductDesc = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(ProductDesc))
+            {
+                Console.WriteLine("Product Description is not empty!");
+                goto ProductDesc;
+            }
+
+            Console.WriteLine("Please add Product Color");
+        ProductColor: string ProductColor = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(ProductColor))
+            {
+                Console.WriteLine("Product Color is not empty!");
+                goto ProductColor;
+            }
+
+            var categories = await _categoryService.GetAllAsync();
+
+        CategoryId: if (categories != null && categories.Count() > 0)
+            {
+                Console.WriteLine("Choose Category Id :");
+                foreach (var category in categories)
+                {
+                    Console.WriteLine(category.Id + " / " + category.Name);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Category not found !");
+                return;
+            }
+
+            string CategoryId = Console.ReadLine();
+
+            bool categoryIdSuccessFormat = int.TryParse(CategoryId, out var categoryId);
+
+            if (categoryIdSuccessFormat)
+            {
+                if (!string.IsNullOrWhiteSpace(CategoryId))
+                {
+                    var category = await _categoryService.GetByIdAsync(categoryId);
+
+                    if (category == null)
+                    {
+                        Console.WriteLine("Category Not Found");
+                        goto CategoryId;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please add category id correct format");
+                goto CategoryId;
+            }
+
+            await _productService.CreateAsync(new Product { Name = name, Count = count, Price = price, Description = ProductDesc, Color = ProductColor, CategoryId = categoryId, CreatedDate = DateTime.Now });
 
             Console.WriteLine("Product created successfully.");
         }
 
-        public async Task<List<Product>> GetProducts()
+        public async Task GetAllProductsAsync()
         {
             try
             {
-                return (List<Product>)await _productService.GetAllAsync();
+                var products = await _productService.GetAllAsync();
+
+                if (products != null && products.Count() > 0)
+                {
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"Id : {product.Id} / Name : {product.Name} / Price : {product.Price} / Count : {product.Count} / Desc : {product.Description} / Color : {product.Color} / CategoryId : {product.CategoryId}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Product not found !");
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error retrieving products: {ex.Message}");
-                return new List<Product>();
             }
         }
 
@@ -82,7 +172,6 @@ namespace Mini_Layihe.Controllers
             }
         }
 
-
         public async Task DeleteProduct(int id)
         {
             try
@@ -95,38 +184,37 @@ namespace Mini_Layihe.Controllers
                 Console.WriteLine($"Error deleting product: {ex.Message}");
             }
         }
-        //public async Task CreateProduct(int id)
-        //{
-        //    Console.WriteLine("Enter Product Name:");
-        //    string name = Console.ReadLine();
 
-        //    Console.WriteLine("Enter Product Price:");
-        //    decimal price;
+        public async Task SearchByNameAsync()
+        {
+            Console.WriteLine("Please search text");
+        SearchText: string searcText = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(searcText))
+            {
+                Console.WriteLine("Search text is not empty !");
+                goto SearchText;
+            }
+            else
+            {
+                var products = await _productService.SearchByNameAsync(searcText);
 
-        //    // Validate the price input
-        //    while (!decimal.TryParse(Console.ReadLine(), out price) || price <= 0)
-        //    {
-        //        Console.WriteLine("Please enter a valid price greater than zero.");
-        //    }
+                if (products != null && products.Count() > 0)
+                {
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"Id : {product.Id} / Name : {product.Name} / Price : {product.Price} / Count : {product.Count} / Desc : {product.Description} / Color : {product.Color} / CategoryId : {product.CategoryId}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Product not found !");
+                }
+            };
+        }
 
-        //    Console.WriteLine("Enter Product Color:");
-        //    string color = Console.ReadLine();
-
-        //    // Optionally, prompt for other fields like category, etc.
-
-        //    // Create a new Product instance
-        //    var newProduct = new Product
-        //    {
-        //        Name = name,
-        //        Price = price,
-        //        Color = color,
-        //        CreatedDate = DateTime.Now // Assuming you want to set the creation date
-        //    };
-
-        //    // Call the service to create the product
-        //    await _productService.CreateAsync(newProduct);
-        //    Console.WriteLine("Product created successfully.");
-        //}
-
+        internal Task<IEnumerable<object>> GetProducts()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

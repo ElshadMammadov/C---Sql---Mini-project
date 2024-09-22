@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/7/31gaVUfzvCr3yQhVtCtGZ0F+F+YmL7UmcBhpiqbIpbyZDGO0tYSxA4jxS0QF0GyxWF95tY0YISNqNYkYtsw==",
+  "dgSpecHash": "/sEydZZFoJIUYaxdXGitd47IJRlZzyuOYk1Fav5YF5WiLzcyrFqbybSVVQfLOVwxkL8HGwd6CbaI5XIlbuxrFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Repository\\Repository.csproj",
+  "projectFilePath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elshad\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\elshad\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

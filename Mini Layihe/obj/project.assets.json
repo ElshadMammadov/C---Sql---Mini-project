@@ -2033,11 +2033,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Mini Layihe\\Mini Layihe.csproj",
+      "projectUniqueName": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Mini Layihe.csproj",
       "projectName": "Mini Layihe",
-      "projectPath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Mini Layihe\\Mini Layihe.csproj",
+      "projectPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Mini Layihe.csproj",
       "packagesPath": "C:\\Users\\elshad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Mini Layihe\\obj\\",
+      "outputPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\elshad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2054,8 +2054,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Service\\Service.csproj": {
-              "projectPath": "C:\\Users\\elshad\\Desktop\\Mini Layihe\\Service\\Service.csproj"
+            "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Service\\Service.csproj": {
+              "projectPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Service\\Service.csproj"
             }
           }
         }

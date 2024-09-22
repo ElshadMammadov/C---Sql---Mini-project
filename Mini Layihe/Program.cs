@@ -56,7 +56,7 @@ namespace Mini_Layihe
                         await categoryController.CreateCategory();
                         break;
                     case "2":
-                        await categoryController.GetCategoriesAsync();                      
+                        await categoryController.GetCategoriesAsync();
                         break;
                     case "3":
                         Console.WriteLine("Enter Category ID to update:");
@@ -68,65 +68,43 @@ namespace Mini_Layihe
                         int deleteCategoryId = int.Parse(Console.ReadLine());
                         await categoryController.DeleteCategoryAsync(deleteCategoryId);
                         break;
-                    //case "5":
-                    //    Console.WriteLine("Enter search text for categories:");
-                    //    string searchText = Console.ReadLine();
-                    //    var searchedCategories = await categoryController.Search(searchText);
-                    //    foreach (var category in searchedCategories)
-                    //    {
-                    //        Console.WriteLine($"Found Category: {category.Name}");
-                    //    }
-                    //    break;
-                    //case "6":
-                    //    var categoriesWithProducts = await categoryController.GetAllWithProducts();
-                    //    foreach (var category in categoriesWithProducts)
-                    //    {
-                    //        Console.WriteLine($"Category: {category.Name}, Products: {category.Products.Count}");
-                    //    }
-                    //    break;
-                    //case "7":
-                    //    var sortedCategories = await categoryController.SortWithCreatedDate();
-                    //    foreach (var category in sortedCategories)
-                    //    {
-                    //        Console.WriteLine($"Category: {category.Name}, Created Date: {category.CreatedDate}");
-                    //    }
-                    //    break;
+                    case "5":
+                        await categoryController.SearchAsync();
+                        break;
+                    case "6":
+                        await categoryController.GetAllWithProducts();
+                        break;
+                    case "7":
+                        await categoryController.SortWithCreatedDateAsync();
+
+                        break;
                     case "8":
                         await productController.CreateProduct();
                         break;
                     case "9":
-                        var products = await productController.GetProducts();
-                        foreach (var product in products)
-                        {
-                            Console.WriteLine($"Product: {product.Name}, Price: {product.Price}");
-                        }
+                        await productController.GetAllProductsAsync();
                         break;
-                    case "10":
-                        Console.WriteLine("Enter Product ID to update:");
-                        int updateProductId = int.Parse(Console.ReadLine());
-                        await productController.UpdateProduct(updateProductId);
-                        break;
-                    case "11":
-                        Console.WriteLine("Enter Product ID to delete:");
-                        int deleteProductId = int.Parse(Console.ReadLine());
-                        await productController.DeleteProduct(deleteProductId);
-                        break;
-                    //case "12":
-                    //    Console.WriteLine("Enter search text for products:");
-                    //    string productSearchText = Console.ReadLine();
-                    //    var searchedProducts = await productController.SearchByName(productSearchText);
-                    //    foreach (var product in searchedProducts)
-                    //    {
-                    //        Console.WriteLine($"Found Product: {product.Name}");
-                    //    }
+                    //case "10":
+                    //    Console.WriteLine("Enter Product ID to update:");
+                    //    int updateProductId = int.Parse(Console.ReadLine());
+                    //    await productController.UpdateProduct(updateProductId);
                     //    break;
+                    //case "11":
+                    //    Console.WriteLine("Enter Product ID to delete:");
+                    //    int deleteProductId = int.Parse(Console.ReadLine());
+                    //    await productController.DeleteProduct(deleteProductId);
+                    //    break;
+                    case "12":
+
+                        await productController.SearchByNameAsync();
+                        break;
                     //case "13":
-                    //    Console.WriteLine("Enter Category Name to filter products:");
-                    //    string categoryName = Console.ReadLine();
-                    //    var filteredProducts = await productController.FilterByCategoryName(categoryName);
-                    //    foreach (var product in filteredProducts)
+                    //    console.writeline("enter category name to filter products:");
+                    //    string categoryname = console.readline();
+                    //    var filteredproducts = await productcontroller.filterbycategoryname(categoryname);
+                    //    foreach (var product in filteredproducts)
                     //    {
-                    //        Console.WriteLine($"Filtered Product: {product.Name}");
+                    //        console.writeline($"filtered product: {product.name}");
                     //    }
                     //    break;
                     //case "14":

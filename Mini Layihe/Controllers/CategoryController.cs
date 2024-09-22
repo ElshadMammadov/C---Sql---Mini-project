@@ -15,7 +15,7 @@ namespace Mini_Layihe.Controllers
     {
         private readonly ICategoryService _categoryService;
 
-        
+
 
         public CategoryController(ICategoryService categoryService)
         {
@@ -45,18 +45,55 @@ namespace Mini_Layihe.Controllers
             }
         }
 
+        public async Task GetAllWithProducts()
+        {
+
+            IEnumerable<Category> categories = await _categoryService.GetAllWithProducts();
+
+            if (categories != null && categories.Count() > 0)
+            {
+
+                foreach (var category in categories)
+                {
+                    string categoryProducts = "";
+
+                    if (category.Products.Count() > 0)
+                    {
+                        foreach (var categoryProduct in category.Products)
+                        {
+                            categoryProducts += " / " + categoryProduct.Id + " " + categoryProduct.Name;
+                        }
+                    }
+                    Console.WriteLine($"Id : {category.Id} / Name : {category.Name}  / Create Date : {category.CreatedDate} / Products / Id / Name  {categoryProducts}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Category not found !");
+            }
+
+        }
         public async Task UpdateCategoryAsync(int id)
         {
-            Console.WriteLine("Enter New Category Name:");
-            string newName = Console.ReadLine();
 
             try
             {
                 var category = await _categoryService.GetByIdAsync(id);
+
                 if (category != null)
                 {
+
+                    Console.WriteLine("Enter New Category Name:");
+                NewName: string newName = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(newName))
+                    {
+                        Console.WriteLine("Ad Bos ola bilmez");
+                        goto NewName;
+                    }
+
                     category.Name = newName;
-                    await _categoryService.UpdateAsync(id,category);
+                    await _categoryService.UpdateAsync(id, category);
                     Console.WriteLine("Category updated successfully.");
                 }
                 else
@@ -68,13 +105,15 @@ namespace Mini_Layihe.Controllers
             {
                 Console.WriteLine($"Error updating category: {ex.Message}");
             }
+
+
         }
 
         public async Task DeleteCategoryAsync(int deleteCategoryId)
         {
             // Check if the category exists
             Console.WriteLine("Add category id:");
-            Id: string idStr=Console.ReadLine();
+        Id: string idStr = Console.ReadLine();
             bool isCorrectIdFormat = int.TryParse(idStr, out int id);
             if (isCorrectIdFormat)
             {
@@ -97,16 +136,64 @@ namespace Mini_Layihe.Controllers
                 Console.WriteLine("Invalid input:Please try again:");
                 goto Id;
             }
-           
+
         }
 
-        internal Task<IEnumerable<object>> Search(string? searchText)
+        public async Task SearchAsync()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Please add search text !");
+
+        SearchText: string searchText = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                Console.WriteLine("Please add the Category name in the correct format");
+                goto SearchText;
+            }
+            else
+            {
+                IEnumerable<Category> categories = await _categoryService.SearchAsync(searchText);
+
+                if (categories != null && categories.Count() > 0)
+                {
+
+                    foreach (var category in categories)
+                    {
+                        string categoryProducts = "";
+
+                        if (category.Products.Count() > 0)
+                        {
+                            foreach (var categoryProduct in category.Products)
+                            {
+                                categoryProducts += categoryProduct.Id + " / " + categoryProduct.Name;
+                            }
+                        }
+                        Console.WriteLine($"Id : {category.Id} / Name : {category.Name} / Create Date : {category.CreatedDate} / Products / Id / Name / {categoryProducts}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Category not found !");
+                }
+            }
+        }
+
+        public async Task SortWithCreatedDateAsync()
+        {
+            var categories = await _categoryService.SortWithCreatedDate();
+
+            if (categories != null && categories.Count() > 0)
+            {
+                foreach (var category in categories)
+                {
+                    Console.WriteLine($"Id : {category.Id} / Name : {category.Name} / Create Date : {category.CreatedDate}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Category not found !");
+            }
         }
     }
 }
-
-
-
 

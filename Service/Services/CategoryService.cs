@@ -25,18 +25,18 @@ namespace Service.Services
 
         public async Task DeleteAsync(int id)
         {
-            var existCategory=await _categoryRepo.GetByIdAsync(id);
+            var existCategory = await _categoryRepo.GetByIdAsync(id);
             await _categoryRepo.DeleteAsync(existCategory);
         }
 
         public async Task<IEnumerable<Category>> GetAllAsync()
         {
-            return await _categoryRepo.GetAllAsync(); 
+            return await _categoryRepo.GetAllAsync();
         }
 
         public async Task<IEnumerable<Category>> GetAllWithProducts()
         {
-            throw new NotImplementedException();
+            return await _categoryRepo.GetAllWithProducts();
         }
 
         public Task<IEnumerable<Category>> GetArchiveCategories()
@@ -54,9 +54,20 @@ namespace Service.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Category>> SortWithCreatedDate()
+        public async Task<IEnumerable<Category>> SearchAsync(string searchText)
         {
-            throw new NotImplementedException();
+
+            return await _categoryRepo.SearchAsync(searchText);
+        }
+
+        public async Task<IEnumerable<Category>> SortWithCreatedDate()
+        {
+            return await _categoryRepo.SortWithCreatedDateAsync();
+        }
+
+        public Task<IEnumerable<Category>> SortWithCreatedDateAsync()
+        {
+            return _categoryRepo.SortWithCreatedDateAsync();
         }
 
         public async Task UpdateAsync(int id, Category category)
