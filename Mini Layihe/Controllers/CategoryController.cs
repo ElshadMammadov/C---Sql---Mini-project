@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Mini_Layihe.Controllers
 {
+  
     public class CategoryController
     {
         private readonly ICategoryService _categoryService;
-
 
 
         public CategoryController(ICategoryService categoryService)
@@ -193,6 +193,11 @@ namespace Mini_Layihe.Controllers
             {
                 Console.WriteLine("Category not found !");
             }
+        }
+
+        public async Task GetByIdAsync(int categoryId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

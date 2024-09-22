@@ -8,6 +8,7 @@ using Domain.Entities; // Ensure this namespace contains your entity definitions
 using Mini_Layihe.Controllers;
 using Repository.Repositories.Interfaces;
 using Repository.Repositories;
+using Mini_Layihe.Helpers.Extentions;
 
 namespace Mini_Layihe
 {
@@ -29,24 +30,30 @@ namespace Mini_Layihe
 
             while (true)
             {
-                Console.WriteLine("Choose an option:");
-                Console.WriteLine("1. Create Category");
-                Console.WriteLine("2. Get Categories");
-                Console.WriteLine("3. Update Category");
-                Console.WriteLine("4. Delete Category");
-                Console.WriteLine("5. Search Categories");
-                Console.WriteLine("6. Get Categories with Products");
-                Console.WriteLine("7. Sort Categories by Created Date");
-                Console.WriteLine("8. Create Product");
-                Console.WriteLine("9. Get Products");
-                Console.WriteLine("10. Update Product");
-                Console.WriteLine("11. Delete Product");
-                Console.WriteLine("12. Search Products by Name");
-                Console.WriteLine("13. Filter Products by Category Name");
-                Console.WriteLine("14. Sort Products by Price");
-                Console.WriteLine("15. Sort Products by Created Date");
-                Console.WriteLine("16. Search Products by Color");
-                Console.WriteLine("17. Exit");
+                ConsoleColor.Red.WriteConsole("Choose an option:");
+                ConsoleColor.Green.WriteConsole("1. Create Category");
+                ConsoleColor.Green.WriteConsole("2. Get Categories");
+                ConsoleColor.Green.WriteConsole("3. Get Category By ID");       
+                ConsoleColor.Green.WriteConsole("4. Update Category");
+                ConsoleColor.Green.WriteConsole("5. Delete Category");
+                ConsoleColor.Green.WriteConsole("6. Search Categories");
+                ConsoleColor.Green.WriteConsole("7. Get Categories with Products");
+                ConsoleColor.Green.WriteConsole("8. Sort Categories by Created Date");
+                ConsoleColor.Green.WriteConsole("9. Get Archive Categories");   
+                Console.WriteLine("");
+                ConsoleColor.Red.WriteConsole("Choose an option:");
+                ConsoleColor.Cyan.WriteConsole("10. Create Product");
+                ConsoleColor.Cyan.WriteConsole("11. Get Products");
+                ConsoleColor.Cyan.WriteConsole("12. Update Product");
+                ConsoleColor.Cyan.WriteConsole("13. Delete Product");
+                ConsoleColor.Cyan.WriteConsole("14. Search Products by Name");
+                ConsoleColor.Cyan.WriteConsole("15. Filter Products by Category Name");
+                ConsoleColor.Cyan.WriteConsole("16. Sort Products by Price");
+                ConsoleColor.Cyan.WriteConsole("17. Sort Products by Created Date");
+                ConsoleColor.Cyan.WriteConsole("18. Search Products by Color");
+                ConsoleColor.Cyan.WriteConsole("19. Delete Product By ID"); 
+                ConsoleColor.Cyan.WriteConsole("20. Update Product By ID"); 
+                ConsoleColor.Red.WriteConsole("21. Exit");
 
                 string choice = Console.ReadLine();
 
@@ -59,78 +66,94 @@ namespace Mini_Layihe
                         await categoryController.GetCategoriesAsync();
                         break;
                     case "3":
+                        Console.WriteLine("Enter Category ID to get:");
+                        int categoryId = int.Parse(Console.ReadLine());
+                        await categoryController.GetByIdAsync(categoryId); // Added
+                        break;
+                    case "4":
                         Console.WriteLine("Enter Category ID to update:");
                         int updateCategoryId = int.Parse(Console.ReadLine());
                         await categoryController.UpdateCategoryAsync(updateCategoryId);
                         break;
-                    case "4":
+                    case "5":
                         Console.WriteLine("Enter Category ID to delete:");
                         int deleteCategoryId = int.Parse(Console.ReadLine());
                         await categoryController.DeleteCategoryAsync(deleteCategoryId);
                         break;
-                    case "5":
+                    case "6":
                         await categoryController.SearchAsync();
                         break;
-                    case "6":
+                    case "7":
                         await categoryController.GetAllWithProducts();
                         break;
-                    case "7":
-                        await categoryController.SortWithCreatedDateAsync();
-
-                        break;
                     case "8":
-                        await productController.CreateProduct();
+                        await categoryController.SortWithCreatedDateAsync();
                         break;
-                    case "9":
+                    //case "9":
+                    //    await categoryController.GetArchiveCategoriesAsync(); // Added
+                    //    break;
+                    case "10":
+                       await productController.CreateProduct();
+                        break;
+                    case "11":
                         await productController.GetAllProductsAsync();
                         break;
-                    //case "10":
+                    //case "12":
                     //    Console.WriteLine("Enter Product ID to update:");
                     //    int updateProductId = int.Parse(Console.ReadLine());
-                    //    await productController.UpdateProduct(updateProductId);
+                    //    await productController.UpdateProductAsync(updateProductId); // Updated to async
                     //    break;
-                    //case "11":
+                    //case "13":
                     //    Console.WriteLine("Enter Product ID to delete:");
                     //    int deleteProductId = int.Parse(Console.ReadLine());
-                    //    await productController.DeleteProduct(deleteProductId);
+                    //    await productController.DeleteProductAsync(deleteProductId); // Updated to async
                     //    break;
-                    case "12":
-
+                    case "14":
                         await productController.SearchByNameAsync();
                         break;
-                    //case "13":
-                    //    console.writeline("enter category name to filter products:");
-                    //    string categoryname = console.readline();
-                    //    var filteredproducts = await productcontroller.filterbycategoryname(categoryname);
-                    //    foreach (var product in filteredproducts)
+                    //case "15":
+                    //    Console.WriteLine("Enter Category Name to filter products:");
+                    //    string categoryName = Console.ReadLine();
+                    //    var filteredProducts = await productController.FilterByCategoryNameAsync(categoryName); // Updated to async
+                    //    foreach (var product in filteredProducts)
                     //    {
-                    //        console.writeline($"filtered product: {product.name}");
+                    //        Console.WriteLine($"Filtered Product: {product.Name}");
                     //    }
                     //    break;
-                    //case "14":
-                    //    var sortedByPrice = await productController.SortWithPrice();
+                    //case "16":
+                    //    var sortedByPrice = await productController.SortWithPriceAsync(); // Updated to async
                     //    foreach (var product in sortedByPrice)
                     //    {
                     //        Console.WriteLine($"Product: {product.Name}, Price: {product.Price}");
                     //    }
                     //    break;
-                    //case "15":
-                    //    var sortedByDate = await productController.SortByCreatedDate();
+                    //case "17":
+                    //    var sortedByDate = await productController.SortByCreatedDateAsync(); // Updated to async
                     //    foreach (var product in sortedByDate)
                     //    {
                     //        Console.WriteLine($"Product: {product.Name}, Created Date: {product.CreatedDate}");
                     //    }
                     //    break;
-                    //case "16":
+                    //case "18":
                     //    Console.WriteLine("Enter color to search for products:");
                     //    string color = Console.ReadLine();
-                    //    var colorSearchedProducts = await productController.SearchByColor(color);
+                    //    var colorSearchedProducts = await productController.SearchByColorAsync(color); // Updated to async
                     //    foreach (var product in colorSearchedProducts)
                     //    {
                     //        Console.WriteLine($"Found Product by Color: {product.Name}");
                     //    }
+                    //    break;                                     
+                    //case "19":
+                    //    Console.WriteLine("Enter Product ID to delete:");
+                    //    int prodIdToDelete = int.Parse(Console.ReadLine());
+                    //    await productController.DeleteProductAsync(prodIdToDelete); // Added
                     //    break;
-                    case "17":
+                    //case "20":
+                    //    Console.WriteLine("Enter Product ID to update:");
+                    //    int prodIdToUpdate = int.Parse(Console.ReadLine());
+                    //    await productController.UpdateProductAsync(prodIdToUpdate); // Added
+                    //    break;
+                    case "21":
                         return; // Exit the application
                     default:
                         Console.WriteLine("Invalid choice, please try again.");
