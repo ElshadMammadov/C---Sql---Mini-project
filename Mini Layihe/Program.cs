@@ -15,12 +15,13 @@ using Mini_Layihe.Helpers.Enum;
 CategoryController categoryController = new ();
 ProductController productController = new ();
 
+GetMenues();
 
 while (true)
 {
-    GetMenues();
+   
 
-Menyu: string SelectedMenu = Console.ReadLine(); 
+Menu: string SelectedMenu = Console.ReadLine(); 
 
     bool isCorrectMenu = int.TryParse(SelectedMenu, out int menu);
 
@@ -100,15 +101,15 @@ Menyu: string SelectedMenu = Console.ReadLine();
             case (21):
                 return;  //Exit the applicationthe application
             default:
-                ConsoleColor.DarkRed.WriteConsole("Please add correct option");
-                goto Menyu;
+                ConsoleColor.DarkRed.WriteConsole("Please select correct option from menu:");
+                goto Menu;
 
         }
     }
     else
     {
-        ConsoleColor.DarkRed.WriteConsole("Please add correct format option");
-        goto Menyu;
+        ConsoleColor.DarkRed.WriteConsole("Please select correct format option: (only digits)");
+        goto Menu;
     }
 }
     

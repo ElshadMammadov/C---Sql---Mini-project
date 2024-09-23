@@ -54,13 +54,13 @@ namespace Mini_Layihe.Controllers
 
                 foreach (var category in categories)
                 {
-                    string categoryProducts = "";
+                    string categoryProducts = " ";
 
                     if (category.Products.Count() > 0)
                     {
                         foreach (var categoryProduct in category.Products)
                         {
-                            categoryProducts += " / " + categoryProduct.Id + " " + categoryProduct.Name;
+                            categoryProducts += " / " + categoryProduct.Id + "  " + categoryProduct.Name;
                         }
                     }
                     Console.WriteLine($"Id : {category.Id} / Name : {category.Name}  / Create Date : {category.CreatedDate} / Products / Id / Name  {categoryProducts}");
@@ -103,7 +103,7 @@ namespace Mini_Layihe.Controllers
         }
         public async Task DeleteCategoryAsync(int deleteCategoryId)
         {
-            // Check if the category exists
+           
             Console.WriteLine("Add category id:");
         Id: string idStr = Console.ReadLine();
             bool isCorrectIdFormat = int.TryParse(idStr, out int id);
@@ -112,14 +112,12 @@ namespace Mini_Layihe.Controllers
                 var category = await _categoryService.GetByIdAsync(id);
 
                 if (category != null)
-                {
-                    // Category exists, proceed to delete
+                {                   
                     await _categoryService.DeleteAsync(id);
                     Console.WriteLine("Category deleted successfully.");
                 }
                 else
-                {
-                    // Category not found
+                {                 
                     Console.WriteLine("Category not found.");
                 }
             }
