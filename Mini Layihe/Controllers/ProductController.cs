@@ -252,27 +252,27 @@ namespace Mini_Layihe.Controllers
                 }
             }
         }
-        //public async Task SortByPrice()
-        //{
-        //    Console.WriteLine("1-Order by increasing\n2-Oder by decreasing");
-        //    Operation: string operation = Console.ReadLine();
-        //    bool isCorrectFormat = int.TryParse(operation, out int opr);
-        //    if (isCorrectFormat)
-        //    {
-        //        if (opr == 1 || opr == 2)
-        //        {
-        //            var products = await _productService.SortWithPriceAsync(opr);
-        //            foreach (var product in products)
-        //            {
-        //                Console.WriteLine($"Name: {product.Name}  Price: {product.Price}  Count: {product.Count}  Color: {product.Color}");
-        //            }
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Enter the correct operation!");
-        //            goto Operation;
-        //        }
-        //    }
-        //}
+        public async Task SortByPrice()
+        {
+            Console.WriteLine("1-Order by increasing\n2-Oder by decreasing");
+        Operation: string operation = Console.ReadLine();
+            bool isCorrectFormat = int.TryParse(operation, out int opr);
+            if (isCorrectFormat)
+            {
+                if (opr == 1 || opr == 2)
+                {
+                    var products = await _productService.SortWithPriceAsync(opr);
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"Name: {product.Name}  Price: {product.Price}  Count: {product.Count}  Color: {product.Color}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Enter the correct operation!");
+                    goto Operation;
+                }
+            }
+        }
     }
 }

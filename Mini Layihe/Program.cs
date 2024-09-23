@@ -95,11 +95,11 @@ namespace Mini_Layihe
                     case "15":
                         await productController.FilterByCategoryNameAsync();
                         break;
-                    //case "16":
-                    //    await productController.SortByPrice(); // Updated to async
-                    //    break;
+                    case "16":
+                        await productController.SortByPrice(); 
+                        break;
                     case "17":
-                        productController.SortByCreateDate(); // Updated to async
+                        productController.SortByCreateDate();
                         break;
                     //case "18":
                     //    Console.WriteLine("Enter color to search for products:");

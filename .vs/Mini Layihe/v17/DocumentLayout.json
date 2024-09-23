@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\mini layihe\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|solutionrelative:mini layihe\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{180F2150-2EDF-4B52-89C0-606DBC136470}|Repository\\Repository.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\repository\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{180F2150-2EDF-4B52-89C0-606DBC136470}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,12 +11,8 @@
       "RelativeMoniker": "D:0:0:{180F2150-2EDF-4B52-89C0-606DBC136470}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\mini layihe\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|solutionrelative:mini layihe\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}|Service\\Service.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\service\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}|Service\\Service.csproj|solutionrelative:service\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\mini layihe\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|solutionrelative:mini layihe\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{541B9767-9BB5-48B2-BE71-93B5008029E3}|Mini Layihe\\Mini Layihe.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\mini layihe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +21,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}|Service\\Service.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\service\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}|Service\\Service.csproj|solutionrelative:service\\services\\productservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}|Service\\Service.csproj|c:\\users\\elshad\\desktop\\c---sql---mini-project\\service\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97C5FF46-BA1F-46FC-9A05-5531B3DC8DA0}|Service\\Service.csproj|solutionrelative:service\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Program.cs",
               "RelativeDocumentMoniker": "Mini Layihe\\Program.cs",
               "ToolTip": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Program.cs",
               "RelativeToolTip": "Mini Layihe\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAAEQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T20:39:18.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "ProductServices.cs",
               "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Service\\Services\\ProductServices.cs",
               "RelativeDocumentMoniker": "Service\\Services\\ProductServices.cs",
@@ -68,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IProductService.cs",
               "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Service\\Services\\Interfaces\\IProductService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\Interfaces\\IProductService.cs",
@@ -76,25 +72,24 @@
               "RelativeToolTip": "Service\\Services\\Interfaces\\IProductService.cs",
               "ViewState": "AgIAAAkAAACgzczMzMwnwBQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T20:37:28.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T20:37:28.924Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\ProductRepository.cs",
               "ToolTip": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\Repositories\\ProductRepository.cs",
               "RelativeToolTip": "Repository\\Repositories\\ProductRepository.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAADEAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAADQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T20:34:39.676Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Repository\\Repositories\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "Repository\\Repositories\\Interfaces\\IProductRepository.cs",
@@ -107,28 +102,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Mini Layihe\\Controllers\\ProductController.cs",
               "ToolTip": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Mini Layihe\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAP0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T20:29:18.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Mini Layihe\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\elshad\\Desktop\\C---Sql---Mini-project\\Mini Layihe\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Mini Layihe\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T19:24:58.072Z",
               "EditorCaption": ""
             }
           ]

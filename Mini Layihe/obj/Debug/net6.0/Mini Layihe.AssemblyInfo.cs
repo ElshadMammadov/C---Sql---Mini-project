@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mini Layihe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32749882c36fe30e8256d7ec04609094cd329e07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+426b1d5f55879aaea212d8865965f0811a2cbe06")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mini Layihe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mini Layihe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
