@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Repository.Repositories
 {
@@ -18,9 +19,16 @@ namespace Repository.Repositories
         {
             _context = new AppDbContext();
         }
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(int opr)
         {
-            throw new NotImplementedException();
+            if (opr == 1)
+            {
+                await _context.Set<Product>().OrderBy(m => m.CreatedDate).ToListAsync();
+            }
+            else
+            {
+                await _context.Set<Product>().OrderByDescending(m => m.CreatedDate).ToListAsync();
+            }
         }
 
         public Task<IEnumerable<Product>> FilterByCategoryNameAsync(string categoryName)
