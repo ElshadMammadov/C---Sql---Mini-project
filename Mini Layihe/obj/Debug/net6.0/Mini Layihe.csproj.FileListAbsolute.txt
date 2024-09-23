@@ -125,6 +125,7 @@ C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\bin\Debug\net6.0\Serv
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\bin\Debug\net6.0\Service.pdb
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\bin\Debug\net6.0\Domain.pdb
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\bin\Debug\net6.0\Repository.pdb
-C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\obj\Debug\net6.0\Mini Layihe.csproj.CopyComplete
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\obj\Debug\net6.0\Mini Layihe.genruntimeconfig.cache
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\obj\Debug\net6.0\ref\Mini Layihe.dll
+C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\obj\Debug\net6.0\Mini Layihe.sourcelink.json
+C:\Users\elshad\Desktop\C---Sql---Mini-project\Mini Layihe\obj\Debug\net6.0\Mini Lay.7686EED1.Up2Date

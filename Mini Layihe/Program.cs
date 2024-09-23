@@ -14,6 +14,7 @@ namespace Mini_Layihe
 {
     class Program
     {
+
         static async Task Main(string[] args)
         {
             // Create repository instances
@@ -95,19 +96,11 @@ namespace Mini_Layihe
                         await productController.FilterByCategoryNameAsync();
                         break;
                     //case "16":
-                    //    var sortedByPrice = await productController.SortWithPriceAsync(); // Updated to async
-                    //    foreach (var product in sortedByPrice)
-                    //    {
-                    //        Console.WriteLine($"Product: {product.Name}, Price: {product.Price}");
-                    //    }
+                    //    await productController.SortByPrice(); // Updated to async
                     //    break;
-                    //case "17":
-                    //    var sortedByDate = await productController.SortByCreatedDateAsync(); // Updated to async
-                    //    foreach (var product in sortedByDate)
-                    //    {
-                    //        Console.WriteLine($"Product: {product.Name}, Created Date: {product.CreatedDate}");
-                    //    }
-                    //    break;
+                    case "17":
+                        productController.SortByCreateDate(); // Updated to async
+                        break;
                     //case "18":
                     //    Console.WriteLine("Enter color to search for products:");
                     //    string color = Console.ReadLine();

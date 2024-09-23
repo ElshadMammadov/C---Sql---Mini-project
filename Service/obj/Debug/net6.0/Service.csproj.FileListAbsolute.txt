@@ -30,5 +30,6 @@ C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\bin\Debug\net6.0\Domain.d
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\bin\Debug\net6.0\Repository.dll
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\bin\Debug\net6.0\Repository.pdb
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\bin\Debug\net6.0\Domain.pdb
-C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\obj\Debug\net6.0\Service.csproj.CopyComplete
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\obj\Debug\net6.0\ref\Service.dll
+C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\obj\Debug\net6.0\Service.sourcelink.json
+C:\Users\elshad\Desktop\C---Sql---Mini-project\Service\obj\Debug\net6.0\Service.csproj.Up2Date

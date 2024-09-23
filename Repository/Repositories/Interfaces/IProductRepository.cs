@@ -14,7 +14,7 @@ namespace Repository.Repositories.Interfaces
         Task<IEnumerable<Product>> GetAllWithCategoryIdAsync(int categoryId);
         Task<IEnumerable<Product>> SearchByColorAsync(string color);
         Task<IEnumerable<Product>> SearchByNameAsync(string name);
-        Task<IEnumerable<Product>> SortByCreatedDateAsync(bool ascending);
-        Task<IEnumerable<Product>> SortWithPriceAsync(bool ascending);
+        Task<IEnumerable<Product>> SortByCreatedDateAsync(int opr);
+        Task<IEnumerable<Product>> SortWithPriceAsync(int opr);
     }
 }

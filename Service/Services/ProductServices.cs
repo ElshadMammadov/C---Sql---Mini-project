@@ -60,14 +60,14 @@ namespace Service.Services
             return await _productRepo.GetAllWithCategoryIdAsync(categoryId);
         }
 
-        public async Task<IEnumerable<Product>> SortWithPriceAsync(bool ascending)
+        public async Task<IEnumerable<Product>> SortWithPriceAsync(int opr)
         {
-            return await _productRepo.SortWithPriceAsync(ascending);
+            return await _productRepo.SortWithPriceAsync(opr);
         }
 
-        public async Task<IEnumerable<Product>> SortByCreatedDateAsync(bool ascending)
+        public async Task<IEnumerable<Product>> SortByCreatedDateAsync(int opr)
         {
-            return await _productRepo.SortByCreatedDateAsync(ascending);
+            return await _productRepo.SortByCreatedDateAsync(opr);
         }
 
         public async Task<IEnumerable<Product>> SearchByColorAsync(string color)

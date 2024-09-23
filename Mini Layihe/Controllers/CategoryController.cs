@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Mini_Layihe.Controllers
 {
   
-    public class CategoryController
+    public class CategoryController 
     {
         private readonly ICategoryService _categoryService;
 
@@ -22,7 +22,7 @@ namespace Mini_Layihe.Controllers
             _categoryService = new CategoryService();
         }
 
-        public async Task CreateCategory()
+        public async Task CreateCategory()                
         {
             Console.WriteLine("Enter Category Name:");
             string name = Console.ReadLine();
@@ -35,7 +35,7 @@ namespace Mini_Layihe.Controllers
             await _categoryService.CreateAsync(new Category { Name = name });
 
             Console.WriteLine("Category created successfully.");
-        }
+        } 
         public async Task GetCategoriesAsync()
         {
             var categories = await _categoryService.GetAllAsync();
@@ -44,7 +44,6 @@ namespace Mini_Layihe.Controllers
                 Console.WriteLine($"Id: {category.Id}, Name: {category.Name}, Created Date: {category.CreatedDate}");
             }
         }
-
         public async Task GetAllWithProducts()
         {
 
@@ -102,7 +101,6 @@ namespace Mini_Layihe.Controllers
            
 
         }
-
         public async Task DeleteCategoryAsync(int deleteCategoryId)
         {
             // Check if the category exists
@@ -132,7 +130,6 @@ namespace Mini_Layihe.Controllers
             }
 
         }
-
         public async Task SearchAsync()
         {
             Console.WriteLine("Please add search text !");
@@ -171,7 +168,6 @@ namespace Mini_Layihe.Controllers
                 }
             }
         }
-
         public async Task SortWithCreatedDateAsync()
         {
             var categories = await _categoryService.SortWithCreatedDate();
@@ -187,8 +183,7 @@ namespace Mini_Layihe.Controllers
             {
                 Console.WriteLine("Category not found !");
             }
-        }
-
+        }     
         public async Task GetByIdAsync(int categoryid)
         {
             Console.WriteLine("Please add id");

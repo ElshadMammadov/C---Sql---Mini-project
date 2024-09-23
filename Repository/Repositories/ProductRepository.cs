@@ -45,14 +45,28 @@ namespace Repository.Repositories
 
         }
 
-        public Task<IEnumerable<Product>> SortByCreatedDateAsync(bool ascending)
+        public async Task<IEnumerable<Product>> SortByCreatedDateAsync(int opr)
         {
-            throw new NotImplementedException();
+            if (opr == 1)
+            {
+                return await _context.Set<Product>().OrderBy(m => m.CreatedDate).ToListAsync();
+            }
+            else
+            {
+                return await _context.Set<Product>().OrderByDescending(m => m.CreatedDate).ToListAsync();
+            }
         }
 
-        public Task<IEnumerable<Product>> SortWithPriceAsync(bool ascending)
+        public async Task<IEnumerable<Product>> SortWithPriceAsync(int opr)
         {
-            throw new NotImplementedException();
+            if (opr == 1)
+            {
+                return await _context.Set<Product>().OrderBy(m => m.Price).ToListAsync();
+            }
+            else
+            {
+                return await _context.Set<Product>().OrderByDescending(m => m.Price).ToListAsync();
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\bin\Debug\net6.0\Repos
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\bin\Debug\net6.0\Repository.pdb
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\bin\Debug\net6.0\Domain.dll
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\bin\Debug\net6.0\Domain.pdb
-C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
 C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\obj\Debug\net6.0\ref\Repository.dll
+C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\obj\Debug\net6.0\Repository.sourcelink.json
+C:\Users\elshad\Desktop\C---Sql---Mini-project\Repository\obj\Debug\net6.0\Repository.csproj.Up2Date
