@@ -17,9 +17,9 @@ namespace Mini_Layihe.Controllers
         private readonly ICategoryService _categoryService;
 
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController()
         {
-            _categoryService = categoryService;
+            _categoryService = new CategoryService();
         }
 
         public async Task CreateCategory()
@@ -76,8 +76,7 @@ namespace Mini_Layihe.Controllers
         public async Task UpdateCategoryAsync(int id)
         {
 
-            try
-            {
+            
                 var category = await _categoryService.GetByIdAsync(id);
 
                 if (category != null)
@@ -100,12 +99,7 @@ namespace Mini_Layihe.Controllers
                 {
                     Console.WriteLine("Category not found.");
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error updating category: {ex.Message}");
-            }
-
+           
 
         }
 
@@ -195,10 +189,35 @@ namespace Mini_Layihe.Controllers
             }
         }
 
-        public async Task GetByIdAsync(int categoryId)
+        public async Task GetByIdAsync(int categoryid)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Please add id");
+        CategoryId: string categoryId = Console.ReadLine();
+
+            bool isSuccess = int.TryParse(categoryId, out var id);
+
+            if (isSuccess)
+            {
+                var category = await _categoryService.GetByIdAsync(id);
+
+                if (category != null)
+                {
+                    Console.WriteLine($"Id : {category.Id} / Name : {category.Name} / Create Date : {category.CreatedDate}");
+                }
+                else
+                {
+                    Console.WriteLine("Category not found !");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please add category id correct format");
+                goto CategoryId;
+            }
+
         }
     }
 }
+
+
 

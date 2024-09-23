@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Service.Services;
 using Service.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,22 +11,15 @@ namespace Mini_Layihe.Controllers
 {
     internal class ProductController
     {
-        private readonly IProductService _productService;
-        private readonly ICategoryService _categoryService;
-        private IProductService productService;
+        private readonly ProductService _productService;
+        private readonly CategoryService _categoryService;
+        private int id;
 
-        public ProductController(IProductService productService,
-                                 ICategoryService categoryService)
+        public ProductController()
         {
-            _productService = productService;
-            _categoryService = categoryService;
+            _productService = new ProductService();
+            _categoryService = new CategoryService();
         }
-
-        public ProductController(IProductService productService)
-        {
-            this.productService = productService;
-        }
-
         public async Task CreateProduct()
         {
             Console.WriteLine("Please enter Product Name:");
@@ -114,7 +108,6 @@ namespace Mini_Layihe.Controllers
 
             Console.WriteLine("Product created successfully.");
         }
-
         public async Task GetAllProductsAsync()
         {
             try
@@ -137,10 +130,76 @@ namespace Mini_Layihe.Controllers
             {
                 Console.WriteLine($"Error retrieving products: {ex.Message}");
             }
+        }           
+        public async Task DeleteProduct(int id)
+        {
+            try
+            {
+                await _productService.DeleteAsync(id);
+                Console.WriteLine("Product deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting product: {ex.Message}");
+            }
+        }
+        public async Task SearchByNameAsync()
+        {
+            Console.WriteLine("Please search text");
+        SearchText: string searcText = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(searcText))
+            {
+                Console.WriteLine("Search text is not empty !");
+                goto SearchText;
+            }
+            else
+            {
+                var products = await _productService.SearchByNameAsync(searcText);
+
+                if (products != null && products.Count() > 0)
+                {
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"Id : {product.Id} / Name : {product.Name} / Price : {product.Price} / Count : {product.Count} / Desc : {product.Description} / Color : {product.Color} / CategoryId : {product.CategoryId}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Product not found !");
+                }
+            };
+        }
+        public async Task FilterByCategoryNameAsync()
+        {
+            Console.WriteLine("Please add Category Name");
+        CategoryName: string categoryName = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(categoryName))
+            {
+                Console.WriteLine("Category is not empty !");
+                goto CategoryName;
+            }
+            else
+            {
+                var products = await _productService.FilterByCategoryNameAsync(categoryName);
+
+                if (products != null && products.Count() > 0)
+                {
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"Id : {product.Id} / Name : {product.Name} / Price : {product.Price} / Count : {product.Count} / Desc : {product.Description} / Color : {product.Color} / CategoryId : {product.CategoryId} / CategoryName : {product.Category.Name}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Product not found !");
+                }
+
+            }
+
         }
 
-
-        public async Task UpdateProduct(int id)
+        public async Task UpdateProductAsync(int id)
         {
             Console.WriteLine("Enter New Product Name:");
             string newName = Console.ReadLine();
@@ -172,45 +231,5 @@ namespace Mini_Layihe.Controllers
                 Console.WriteLine($"Error updating product: {ex.Message}");
             }
         }
-        public async Task DeleteProduct(int id)
-        {
-            try
-            {
-                await _productService.DeleteAsync(id);
-                Console.WriteLine("Product deleted successfully.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error deleting product: {ex.Message}");
-            }
-        }
-
-        public async Task SearchByNameAsync()
-        {
-            Console.WriteLine("Please search text");
-        SearchText: string searcText = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(searcText))
-            {
-                Console.WriteLine("Search text is not empty !");
-                goto SearchText;
-            }
-            else
-            {
-                var products = await _productService.SearchByNameAsync(searcText);
-
-                if (products != null && products.Count() > 0)
-                {
-                    foreach (var product in products)
-                    {
-                        Console.WriteLine($"Id : {product.Id} / Name : {product.Name} / Price : {product.Price} / Count : {product.Count} / Desc : {product.Description} / Color : {product.Color} / CategoryId : {product.CategoryId}");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Product not found !");
-                }
-            };
-        }
-
     }
 }

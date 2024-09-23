@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Repository.Repositories;
 using Repository.Repositories.Interfaces;
 using Service.Services.Interfaces;
 using System;
@@ -13,9 +14,9 @@ namespace Service.Services
     {
         private readonly IProductRepository _productRepo;
 
-        public ProductService(IProductRepository productRepo)
+        public ProductService()
         {
-            _productRepo = productRepo;
+            _productRepo = new ProductRepository();
         }
 
         public async Task CreateAsync(Product product)
@@ -80,6 +81,11 @@ namespace Service.Services
         }
 
         Task<List<Product>> IProductService.GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Product> GetByIdAsync(object id)
         {
             throw new NotImplementedException();
         }

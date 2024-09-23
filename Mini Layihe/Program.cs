@@ -19,24 +19,21 @@ namespace Mini_Layihe
             // Create repository instances
             IProductRepository productRepository = new ProductRepository(); // Ensure this is your actual implementation
             ICategoryRepository categoryRepository = new CategoryRepository(); // Ensure this is your actual implementation
-
-            // Create service instances
-            ICategoryService categoryService = new CategoryService(categoryRepository);
-            IProductService productService = new ProductService(productRepository);
+    
 
             // Create controllers
-            var categoryController = new CategoryController(categoryService);
-            var productController = new ProductController(productService);
+            var categoryController = new CategoryController();
+            var productController = new ProductController();
 
             while (true)
             {
                 ConsoleColor.Blue.WriteConsole("Please select one option");
                 ConsoleColor.Red.WriteConsole("Category");
-                ConsoleColor.Green.WriteConsole("\n  1.Create Category,\n  2. Get Categories \n  3. Get Category By ID, \n  4 Update Category, \n  5. Delete Category, \n  6. Search Categories, \n  7. Get Categories with Products, \n  8. Sort Categories by Created Date, \n  9. Get Archive Categories");
+                ConsoleColor.Green.WriteConsole("\n  1. Create \n  2. GetAll \n  3. GetById \n  4. Update \n  5. Delete \n  6. Search \n  7. GetAllWithProducts, \n  8. SortWithCreatedDate \n  9. GetArchiveCategories");
                 Console.WriteLine();
                 ConsoleColor.Blue.WriteConsole("Please select one option");
                 ConsoleColor.Red.WriteConsole("Product");
-                ConsoleColor.Green.WriteConsole(" \n  10. Create Product,\n  11. Get Products,\n  12. Update Product,\n  13. Delete Product,\n  14. Search Products by Name,\n  15. Filter Products by Category Name,\n  16. Sort Products by Price,\n  17. Sort Products by Created Date,\n  18. Search Products by Color,\n  19. Delete Product By ID,\n  20. Update Product By ID,\n  21. Exit");
+                ConsoleColor.Green.WriteConsole(" \n  10. Create \n  11. GetAll \n  12. Update \n  13. Delete \n  14. SearchByName,\n  15. FilterByCategoryName,\n  16. SortWithPrice,\n  17. SortByCreatedDate,\n  18. SearchByColor,\n  19. GetAllWithCategoryId,\n  20. GetByID,\n  21. Exit");
 
                 string choice = Console.ReadLine();
 
@@ -81,11 +78,11 @@ namespace Mini_Layihe
                     case "11":
                         await productController.GetAllProductsAsync();
                         break;
-                    //case "12":
-                    //    Console.WriteLine("Enter Product ID to update:");
-                    //    int updateProductId = int.Parse(Console.ReadLine());
-                    //    await productController.UpdateProductAsync(updateProductId); // Updated to async
-                    //    break;
+                    case "12":
+                        Console.WriteLine("Enter Product ID to update:");
+                        int updateProductId = int.Parse(Console.ReadLine());
+                        await productController.UpdateProductAsync(updateProductId); // Updated to async
+                        break;
                     //case "13":
                     //    Console.WriteLine("Enter Product ID to delete:");
                     //    int deleteProductId = int.Parse(Console.ReadLine());
@@ -94,15 +91,9 @@ namespace Mini_Layihe
                     case "14":
                         await productController.SearchByNameAsync();
                         break;
-                    //case "15":
-                    //    Console.WriteLine("Enter Category Name to filter products:");
-                    //    string categoryName = Console.ReadLine();
-                    //    var filteredProducts = await productController.FilterByCategoryNameAsync(categoryName); // Updated to async
-                    //    foreach (var product in filteredProducts)
-                    //    {
-                    //        Console.WriteLine($"Filtered Product: {product.Name}");
-                    //    }
-                    //    break;
+                    case "15":
+                        await productController.FilterByCategoryNameAsync();
+                        break;
                     //case "16":
                     //    var sortedByPrice = await productController.SortWithPriceAsync(); // Updated to async
                     //    foreach (var product in sortedByPrice)

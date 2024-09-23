@@ -13,7 +13,7 @@ namespace Service.Services
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepo;
-        public CategoryService(ICategoryRepository categoryRepository)
+        public CategoryService()
         {
             _categoryRepo = new CategoryRepository();
         }
