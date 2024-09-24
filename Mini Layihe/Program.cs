@@ -10,6 +10,7 @@ using Repository.Repositories;
 using Mini_Layihe.Helpers.Extentions;
 using Microsoft.Extensions.Options;
 using Mini_Layihe.Helpers.Enum;
+using Mini_Layihe.Helpers.Constants;
 
 
 CategoryController categoryController = new ();
@@ -101,14 +102,14 @@ Menu: string SelectedMenu = Console.ReadLine();
             case (21):
                 return;  //Exit the applicationthe application
             default:
-                ConsoleColor.DarkRed.WriteConsole("Please select correct option from menu:");
+                ConsoleColor.Red.WriteConsole(ErrorMessages.MenuSelectedWrong);
                 goto Menu;
 
         }
     }
     else
     {
-        ConsoleColor.DarkRed.WriteConsole("Please select correct format option: (only digits)");
+        ConsoleColor.DarkRed.WriteConsole(ErrorMessages.MenuFormatWrong);
         goto Menu;
     }
 }
